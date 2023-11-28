@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Add a route for the root URL
 app.get('/', (req, res) => {
-    res.send('Welcome to my Node.js project!'); // You can adjust this to serve an HTML page if needed
+    res.sendFile('/index.html', { root: '.' }); // Serve index.html at the root path
 });
 
 // app.listen(3000, () => {
