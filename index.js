@@ -5,9 +5,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 // Add a route for the root URL
-app.get('/', (req, res) => {
-    res.sendFile('/index.html', { root: '.' }); // Serve index.html at the root path
-});
+// app.get('/', (req, res) => {
+//     res.sendFile('/index.html', { root: '.' }); // Serve index.html at the root path
+// });
 
 // app.listen(3000, () => {
 //     console.log('Server is running on port 3000');
