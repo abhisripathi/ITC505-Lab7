@@ -4,24 +4,6 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 
-// https://vercel.com/docs/rest-api#endpoints/deployments/get-a-deployment-by-id-or-url
-const deploymentId = 'dpl_8ZQNkgXXt9V4vNf8kQTSLQhDdAr6' // replace with your own
-// https://vercel.com/support/articles/how-do-i-use-a-vercel-api-access-token
-const accessToken = process.env.VERCEL_ACCESS_TOKEN
-const result = await fetch(
-    https://api.vercel.com/v13/deployments/${deploymentId},
-    {
-        method: 'GET',
-        headers: {
-            Authorization: Bearer ${accessToken},
-        }
-    }
-);
-
-// ms since epoch for when the deployment finished
-const { ready } = await result.json() // 1650903484801
-// convert to human-readable date
-const lastDeployedTime = new Date(ready).toLocaleString()
 // Serve index.html at the root path
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
